@@ -41,4 +41,10 @@ $(function () {
         $("#bookingForm").on("submit", function (event) {
         event.preventDefault();
     });
+        $(".specialities__slider").slick({
+        arrows: false,
+        dots: true,
+        infinite: true,
+        speed: 500
+    });
 });
