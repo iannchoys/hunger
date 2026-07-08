@@ -38,4 +38,7 @@ $(function () {
 
         $("#mainMenu").collapse("hide");
     });
+        $("#bookingForm").on("submit", function (event) {
+        event.preventDefault();
+    });
 });

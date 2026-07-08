@@ -766,3 +766,174 @@ body {
         line-height: 22px;
     }
 }
+/* Book a table section */
+
+.booking {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Tenor Sans", sans-serif;
+}
+
+.booking__row {
+    min-height: 575px;
+}
+
+.booking__form-box {
+    max-width: 565px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.booking__title {
+    margin: 0;
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.booking__line {
+    display: block;
+    width: 61px;
+    height: 5px;
+    margin: 10px auto 20px;
+    background-color: var(--hero-yellow);
+    border-radius: 5px;
+}
+
+.booking__form {
+    width: 100%;
+}
+
+.booking__form-row {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.booking__field-col {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.booking__field {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    background-color: #e5e5e5;
+    color: #333333;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.booking__field::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.booking__select {
+    color: rgba(51, 51, 51, 0.5);
+    cursor: pointer;
+}
+
+.booking__button {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-top: 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--hero-yellow);
+    color: #ffffff;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.booking__button:hover,
+.booking__button:focus {
+    background-color: #c4a500;
+}
+
+.booking__image-box {
+    max-width: 588px;
+    margin: 0 auto;
+}
+
+.booking__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.booking__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    margin: 0;
+    padding: 0 15px;
+    color: rgba(51, 51, 51, 0.5);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* Book a table адаптация */
+
+@media (max-width: 991.98px) {
+    .booking {
+        padding-top: 70px;
+    }
+
+    .booking__row {
+        min-height: auto;
+    }
+
+    .booking__form-box {
+        margin-bottom: 45px;
+    }
+
+    .booking__image-box {
+        max-width: 520px;
+    }
+
+    .booking__info {
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .booking {
+        padding-top: 55px;
+    }
+
+    .booking__title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .booking__field {
+        height: 56px;
+    }
+
+    .booking__button {
+        height: 56px;
+    }
+
+    .booking__info {
+        min-height: 70px;
+        font-size: 11px;
+        line-height: 17px;
+    }
+}
