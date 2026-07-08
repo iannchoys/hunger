@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hungry People</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    >
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <main>
+        <section class="hero" id="home">
+            <header class="hero__header">
+                <nav class="navbar navbar-expand-lg hero__navbar">
+                    <div class="container hero__navbar-container">
+
+                        <a class="hero__logo" href="#home" aria-label="Hungry People">
+                            <img
+                                class="hero__logo-image"
+                                src="{% static 'images/hero/Vector.png' %}"
+                                alt="Hungry People logo"
+                            >
+                        </a>
+
+                        <button
+                            class="navbar-toggler hero__toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#mainMenu"
+                            aria-controls="mainMenu"
+                            aria-expanded="false"
+                            aria-label="Open menu"
+                        >
+                            <span class="hero__toggler-line"></span>
+                            <span class="hero__toggler-line"></span>
+                            <span class="hero__toggler-line"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse hero__menu-wrapper" id="mainMenu">
+                            <ul class="navbar-nav hero__menu hero__menu--left mr-lg-auto">
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#home">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#about">ABOUT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#team">TEAM</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#booking">BOOKING</a>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav hero__menu hero__menu--right ml-lg-auto">
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#menu">MENU</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#gallery">GALERIE</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#events">EVENTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#contact">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="hero__menu-link hero__anchor" href="#login">LOGIN</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+            <div class="hero__grid" aria-hidden="true">
+                <span class="hero__grid-horizontal hero__grid-horizontal--left"></span>
+                <span class="hero__grid-horizontal hero__grid-horizontal--right"></span>
+
+                <span class="hero__grid-vertical hero__grid-vertical--left"></span>
+                <span class="hero__grid-vertical hero__grid-vertical--center"></span>
+                <span class="hero__grid-vertical hero__grid-vertical--right"></span>
+            </div>
+
+            <p class="hero__working-hours">
+                MON - FRI: 8PM - 10PM, SAT - SUN: 8PM - 3AM
+            </p>
+
+            <ul class="hero__social-list">
+                <li class="hero__social-item">
+                    <a
+                        class="hero__social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            class="hero__social-icon"
+                            src="{% static 'images/hero/instagram.png' %}"
+                            alt=""
+                        >
+                    </a>
+                </li>
+
+                <li class="hero__social-item">
+                    <a
+                        class="hero__social-link"
+                        href="https://twitter.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Twitter"
+                    >
+                        <img
+                            class="hero__social-icon"
+                            src="{% static 'images/hero/twitter.png' %}"
+                            alt=""
+                        >
+                    </a>
+                </li>
+
+                <li class="hero__social-item">
+                    <a
+                        class="hero__social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            class="hero__social-icon"
+                            src="{% static 'images/hero/facebook.png' %}"
+                            alt=""
+                        >
+                    </a>
+                </li>
+            </ul>
+
+            <div class="container hero__content">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <p class="hero__subtitle">RESTAURANT</p>
+
+                        <h1 class="hero__title">HUNGRY PEOPLE</h1>
+
+                        <img
+                            class="hero__line"
+                            src="{% static 'images/hero/Rectangle 2.png' %}"
+                            alt=""
+                        >
+
+                        <div class="hero__actions">
+                            <a class="btn hero__button hero__button--primary hero__anchor" href="#booking">
+                                BOOK TABLE
+                            </a>
+
+                            <a class="btn hero__button hero__button--outline hero__anchor" href="#about">
+                                EXPLORE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="hero__down-link hero__anchor" href="#about" aria-label="Scroll down">
+                <img
+                    class="hero__down-image"
+                    src="{% static 'images/hero/down-btn.png' %}"
+                    alt=""
+                >
+            </a>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
