@@ -47,4 +47,23 @@ $(function () {
         infinite: true,
         speed: 500
     });
+        $(".food-menu__tab").on("click", function () {
+        var category = $(this).data("category");
+        var menuItems = $(".food-menu__item-col").toArray();
+
+        $(".food-menu__tab").removeClass("food-menu__tab--active");
+        $(this).addClass("food-menu__tab--active");
+
+        if (category === "all") {
+            $(menuItems).css("display", "block");
+            return;
+        }
+
+        var filteredItems = menuItems.filter(function (item) {
+            return $(item).data("category") === category;
+        });
+
+        $(menuItems).css("display", "none");
+        $(filteredItems).css("display", "block");
+    });
 });

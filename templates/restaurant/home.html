@@ -494,6 +494,84 @@
                 </div>
             </div>
         </section>
+        <section class="food-menu" id="menu">
+            <div class="container">
+                <div class="food-menu__header">
+                    <h2 class="food-menu__title">DELICIOUS MENU</h2>
+
+                    <span class="food-menu__line"></span>
+
+                    <p class="food-menu__subtitle">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis at velit maximus, molestie est a, tempor magna.
+                    </p>
+                </div>
+
+                <div class="food-menu__tabs">
+                    <button class="food-menu__tab food-menu__tab--active" type="button" data-category="all">
+                        ALL
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="soupe">
+                        SOUPE
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="pizza">
+                        PIZZA
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="pasta">
+                        PASTA
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="desert">
+                        DESERT
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="wine">
+                        WINE
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="beer">
+                        BEER
+                    </button>
+
+                    <button class="food-menu__tab" type="button" data-category="drinks">
+                        DRINKS
+                    </button>
+                </div>
+
+                <div class="row food-menu__items">
+                    {% for item in menu_items %}
+                        <div class="col-lg-4 col-md-6 food-menu__item-col" data-category="{{ item.category }}">
+                            <article class="food-menu__item">
+                                <div class="food-menu__item-top">
+                                    <h3 class="food-menu__item-title">
+                                        {{ item.title }}
+                                    </h3>
+
+                                    <span class="food-menu__item-dots"></span>
+
+                                    <span class="food-menu__item-price">
+                                        {{ item.price|floatformat:2 }} USD
+                                    </span>
+                                </div>
+
+                                <p class="food-menu__item-subtitle">
+                                    {{ item.subtitle }}
+                                </p>
+                            </article>
+                        </div>
+                    {% empty %}
+                        <div class="col-12">
+                            <p class="food-menu__empty">
+                                Menu items will be added later.
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
