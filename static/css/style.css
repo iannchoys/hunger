@@ -592,3 +592,177 @@ body {
     }
 
 }
+/* Our team section */
+
+.team {
+    position: relative;
+    min-height: 675px;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: "Tenor Sans", sans-serif;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/team/team-bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.team__container {
+    position: relative;
+    z-index: 2;
+    min-height: 675px;
+    padding-top: 42px;
+    padding-bottom: 90px;
+}
+
+.team__section-name {
+    margin: 0 0 45px;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.team__row {
+    min-height: 475px;
+}
+
+.team__image-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.team__content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team__title {
+    margin: 0;
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.team__line {
+    display: block;
+    width: 60px;
+    height: 5px;
+    margin: 12px auto 18px;
+    background-color: var(--hero-yellow);
+    border-radius: 50px;
+}
+
+.team__lead {
+    margin: 0 0 18px;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.team__text {
+    margin: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* Вертикальные линии в блоке Our Team */
+
+.team__grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.team__grid-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.team__grid-line--left {
+    left: 25%;
+}
+
+.team__grid-line--center {
+    left: 50%;
+}
+
+.team__grid-line--right {
+    left: 75%;
+}
+
+/* Our Team адаптация */
+
+@media (max-width: 991.98px) {
+    .team {
+        min-height: auto;
+    }
+
+    .team__container {
+        min-height: auto;
+        padding-top: 45px;
+        padding-bottom: 70px;
+    }
+
+    .team__section-name {
+        margin-bottom: 35px;
+    }
+
+    .team__image-box {
+        max-width: 520px;
+        margin-bottom: 40px;
+    }
+
+    .team__content {
+        max-width: 620px;
+    }
+
+    .team__grid {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .team__container {
+        padding-top: 40px;
+        padding-bottom: 55px;
+    }
+
+    .team__section-name {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .team__title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .team__lead {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .team__text {
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
