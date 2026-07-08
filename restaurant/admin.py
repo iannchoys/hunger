@@ -1,4 +1,4 @@
-from .models import MenuItem, PrivateEvent
+from .models import MenuItem, PrivateEvent, ContactMessage
 
 from django.contrib import admin
 
@@ -14,3 +14,9 @@ class PrivateEventAdmin(admin.ModelAdmin):
     list_display = ("title", "order", "is_active")
     list_filter = ("is_active",)
     search_fields = ("title", "subtitle", "text")
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "phone", "created_at")
+    search_fields = ("name", "email", "phone", "message")
+    readonly_fields = ("created_at",)

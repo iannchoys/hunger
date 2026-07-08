@@ -66,4 +66,38 @@ $(function () {
         $(menuItems).css("display", "none");
         $(filteredItems).css("display", "block");
     });
+        $("#contactForm").on("submit", function (event) {
+        event.preventDefault();
+
+        var $form = $(this);
+        var $status = $("#contactStatus");
+
+        $status
+            .removeClass("contact__status--success contact__status--error")
+            .text("Sending...");
+
+        $.ajax({
+            url: "/contact/create/",
+            type: "POST",
+            data: $form.serialize(),
+            success: function (response) {
+                $status
+                    .addClass("contact__status--success")
+                    .text(response.message);
+
+                $form[0].reset();
+            },
+            error: function (response) {
+                var message = "Something went wrong.";
+
+                if (response.responseJSON && response.responseJSON.message) {
+                    message = response.responseJSON.message;
+                }
+
+                $status
+                    .addClass("contact__status--error")
+                    .text(message);
+            }
+        });
+    });
 });
