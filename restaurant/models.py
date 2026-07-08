@@ -31,3 +31,17 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return self.title
+    
+class PrivateEvent(models.Model):
+    title = models.CharField(max_length=120)
+    subtitle = models.CharField(max_length=255, blank=True)
+    text = models.TextField(blank=True)
+    image = models.CharField(max_length=255)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "title"]
+
+    def __str__(self):
+        return self.title

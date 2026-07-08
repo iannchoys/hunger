@@ -572,6 +572,44 @@
                 </div>
             </div>
         </section>
+        <section class="private-events" id="events">
+            <div class="private-events__grid" aria-hidden="true">
+                <span class="private-events__grid-line private-events__grid-line--left"></span>
+                <span class="private-events__grid-line private-events__grid-line--center"></span>
+                <span class="private-events__grid-line private-events__grid-line--right"></span>
+            </div>
+
+            <div class="container private-events__container">
+                <p class="private-events__section-name">PRIVATE EVENTS</p>
+
+                <div class="row private-events__row">
+                    {% for event in private_events %}
+                        <div class="col-lg-6 private-events__col">
+                            <article class="private-events__card">
+                                <img
+                                    class="private-events__image"
+                                    src="{% static event.image %}"
+                                    alt="{{ event.title }}"
+                                >
+                            </article>
+                        </div>
+                    {% empty %}
+                        <div class="col-12">
+                            <p class="private-events__empty">
+                                Private events will be added later.
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <p class="private-events__info">
+                For private events please call:
+                +40 729 131 637/+40 726 458 782
+                or use the contact form.
+            </p>
+        </section>
+
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
