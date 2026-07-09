@@ -1,4 +1,4 @@
-from .models import MenuItem, PrivateEvent, ContactMessage
+from .models import Booking, ContactMessage, MenuItem, PrivateEvent, StaticBlock
 
 from django.contrib import admin
 
@@ -20,3 +20,14 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone", "created_at")
     search_fields = ("name", "email", "phone", "message")
     readonly_fields = ("created_at",)
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "phone", "people", "date", "time", "created_at")
+    search_fields = ("name", "email", "phone")
+    readonly_fields = ("created_at",)
+
+@admin.register(StaticBlock)
+class StaticBlockAdmin(admin.ModelAdmin):
+    list_display = ("key", "title", "image")
+    search_fields = ("key", "title", "subtitle", "text")

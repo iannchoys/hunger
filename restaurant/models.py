@@ -58,3 +58,31 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.email}"
+
+class Booking(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField()
+    phone = models.CharField(max_length=40)
+    people = models.CharField(max_length=20)
+    date = models.CharField(max_length=40)
+    time = models.CharField(max_length=40)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.name} - {self.date} {self.time}"
+
+class StaticBlock(models.Model):
+    key = models.CharField(max_length=50, unique=True)
+    title = models.CharField(max_length=120)
+    subtitle = models.CharField(max_length=255)
+    text = models.TextField()
+    image = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ["key"]
+
+    def __str__(self):
+        return self.title
