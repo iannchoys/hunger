@@ -392,107 +392,49 @@
                 <p class="specialities__section-name">SPECIALTIES</p>
 
                 <div class="specialities__slider">
-
-                    <div class="specialities__slide">
-                        <div class="row specialities__row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="specialities__image-box">
-                                    <img
-                                        class="specialities__image"
-                                        src="{% static 'images/specialities/specialities-img.png' %}"
-                                        alt="Chocolate pancakes"
-                                    >
+                    {% for speciality in specialities %}
+                        <div class="specialities__slide">
+                            <div class="row specialities__row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="specialities__image-box">
+                                        <img
+                                            class="specialities__image"
+                                            src="{% static speciality.image %}"
+                                            alt="{{ speciality.title }}"
+                                        >
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-6">
-                                <div class="specialities__content">
-                                    <h2 class="specialities__title">CHOCOLATE PANCAKES</h2>
+                                <div class="col-lg-6">
+                                    <div class="specialities__content">
+                                        <h2 class="specialities__title">
+                                            {{ speciality.title }}
+                                        </h2>
 
-                                    <span class="specialities__line"></span>
+                                        <span class="specialities__line"></span>
 
-                                    <p class="specialities__lead">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Duis at velit maximus, molestie est a, tempor magna.
-                                    </p>
+                                        <p class="specialities__lead">
+                                            {{ speciality.subtitle }}
+                                        </p>
 
-                                    <p class="specialities__text">
-                                        Integer ullamcorper neque eu purus euismod, ac faucibus
-                                        mauris posuere. Morbi non ultrices ligula. Sed dictum,
-                                        enim sed ullamcorper feugiat, dui odio vehicula eros,
-                                        a sollicitudin lorem quam nec sem.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="specialities__slide">
-                        <div class="row specialities__row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="specialities__image-box">
-                                    <img
-                                        class="specialities__image"
-                                        src="{% static 'images/specialities/specialities-img.png' %}"
-                                        alt="Berry dessert"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="specialities__content">
-                                    <h2 class="specialities__title">BERRY DESSERT</h2>
-
-                                    <span class="specialities__line"></span>
-
-                                    <p class="specialities__lead">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Duis at velit maximus, molestie est a, tempor magna.
-                                    </p>
-
-                                    <p class="specialities__text">
-                                        Integer ullamcorper neque eu purus euismod, ac faucibus
-                                        mauris posuere. Morbi non ultrices ligula. Sed dictum,
-                                        enim sed ullamcorper feugiat.
-                                    </p>
+                                        <p class="specialities__text">
+                                            {{ speciality.text }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="specialities__slide">
-                        <div class="row specialities__row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="specialities__image-box">
-                                    <img
-                                        class="specialities__image"
-                                        src="{% static 'images/specialities/specialities-img.png' %}"
-                                        alt="Chef special"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="specialities__content">
-                                    <h2 class="specialities__title">CHEF SPECIAL</h2>
-
-                                    <span class="specialities__line"></span>
-
-                                    <p class="specialities__lead">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Duis at velit maximus, molestie est a, tempor magna.
-                                    </p>
-
-                                    <p class="specialities__text">
-                                        Morbi non ultrices ligula. Sed dictum, enim sed
-                                        ullamcorper feugiat, dui odio vehicula eros,
-                                        a sollicitudin lorem quam nec sem.
-                                    </p>
-                                </div>
+                    {% empty %}
+                        <div class="specialities__slide">
+                            <div class="specialities__content">
+                                <h2 class="specialities__title">SPECIALITIES</h2>
+                                <span class="specialities__line"></span>
+                                <p class="specialities__lead">
+                                    Specialities will be added later.
+                                </p>
                             </div>
                         </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </section>

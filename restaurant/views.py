@@ -4,12 +4,13 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
 
-from .models import Booking, ContactMessage, MenuItem, PrivateEvent, StaticBlock
+from .models import Booking, ContactMessage, MenuItem, PrivateEvent, StaticBlock, Speciality
 
 
 def home(request):
     menu_items = MenuItem.objects.filter(on_main=True)[:21]
     private_events = PrivateEvent.objects.filter(is_active=True)[:2]
+    specialities = Speciality.objects.filter(is_active=True)
 
     static_blocks = {
         block.key: block
@@ -21,6 +22,7 @@ def home(request):
         "private_events": private_events,
         "about_block": static_blocks.get("about"),
         "team_block": static_blocks.get("team"),
+        "specialities": specialities,
     }
 
     return render(request, "restaurant/home.html", context)

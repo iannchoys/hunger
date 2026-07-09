@@ -86,3 +86,18 @@ class StaticBlock(models.Model):
 
     def __str__(self):
         return self.title
+
+class Speciality(models.Model):
+    title = models.CharField(max_length=120)
+    subtitle = models.CharField(max_length=255)
+    text = models.TextField()
+    image = models.CharField(max_length=255)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "title"]
+        verbose_name_plural = "Specialities"
+
+    def __str__(self):
+        return self.title

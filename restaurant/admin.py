@@ -1,4 +1,4 @@
-from .models import Booking, ContactMessage, MenuItem, PrivateEvent, StaticBlock
+from .models import Booking, ContactMessage, MenuItem, PrivateEvent, StaticBlock, Speciality
 
 from django.contrib import admin
 
@@ -31,3 +31,9 @@ class BookingAdmin(admin.ModelAdmin):
 class StaticBlockAdmin(admin.ModelAdmin):
     list_display = ("key", "title", "image")
     search_fields = ("key", "title", "subtitle", "text")
+
+@admin.register(Speciality)
+class SpecialityAdmin(admin.ModelAdmin):
+    list_display = ("title", "order", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("title", "subtitle", "text")
