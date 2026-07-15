@@ -1,0 +1,315 @@
+[
+{
+  "model": "restaurant.staticblock",
+  "pk": 1,
+  "fields": {
+    "key": "about",
+    "title": "ABOUT US",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.",
+    "text": "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem.",
+    "image": "images/about/about-img-1.png"
+  }
+},
+{
+  "model": "restaurant.staticblock",
+  "pk": 2,
+  "fields": {
+    "key": "team",
+    "title": "MASTER CHEF",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.",
+    "text": "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem.",
+    "image": "images/team/team-img.png"
+  }
+},
+{
+  "model": "restaurant.speciality",
+  "pk": 1,
+  "fields": {
+    "title": "CHOCOLATE PANCAKES",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.",
+    "text": "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula.",
+    "image": "images/specialities/specialities-img.png",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "restaurant.speciality",
+  "pk": 2,
+  "fields": {
+    "title": "CHOCOLATE PANCAKES",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.",
+    "text": "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula.",
+    "image": "images/specialities/specialities-img.png",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "restaurant.speciality",
+  "pk": 3,
+  "fields": {
+    "title": "CHOCOLATE PANCAKES",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.",
+    "text": "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula.",
+    "image": "images/specialities/specialities-img.png",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 1,
+  "fields": {
+    "title": "Chicken Soup",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "21.50",
+    "category": "soupe",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 2,
+  "fields": {
+    "title": "Tomato Soup",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "18.00",
+    "category": "soupe",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 3,
+  "fields": {
+    "title": "Cream Soup",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "19.75",
+    "category": "soupe",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 4,
+  "fields": {
+    "title": "Pizza Quatro Stagioni",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "55.68",
+    "category": "pizza",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 5,
+  "fields": {
+    "title": "Pizza Pepperoni",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "43.20",
+    "category": "pizza",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 6,
+  "fields": {
+    "title": "Pizza Margarita",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "39.90",
+    "category": "pizza",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 7,
+  "fields": {
+    "title": "Pasta Carbonara",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "31.40",
+    "category": "pasta",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 8,
+  "fields": {
+    "title": "Pasta Bolognese",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "33.10",
+    "category": "pasta",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 9,
+  "fields": {
+    "title": "Pasta Alfredo",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "35.00",
+    "category": "pasta",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 10,
+  "fields": {
+    "title": "Chocolate Cake",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "17.60",
+    "category": "desert",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 11,
+  "fields": {
+    "title": "Berry Dessert",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "16.90",
+    "category": "desert",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 12,
+  "fields": {
+    "title": "Ice Cream",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "14.50",
+    "category": "desert",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 13,
+  "fields": {
+    "title": "Red Wine",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "25.00",
+    "category": "wine",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 14,
+  "fields": {
+    "title": "White Wine",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "24.00",
+    "category": "wine",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 15,
+  "fields": {
+    "title": "Rose Wine",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "26.00",
+    "category": "wine",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 16,
+  "fields": {
+    "title": "Craft Beer",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "12.00",
+    "category": "beer",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 17,
+  "fields": {
+    "title": "Dark Beer",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "13.00",
+    "category": "beer",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 18,
+  "fields": {
+    "title": "Light Beer",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "11.00",
+    "category": "beer",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 19,
+  "fields": {
+    "title": "Lemonade",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "9.00",
+    "category": "drinks",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 20,
+  "fields": {
+    "title": "Orange Fresh",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "10.00",
+    "category": "drinks",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.menuitem",
+  "pk": 21,
+  "fields": {
+    "title": "Mineral Water",
+    "subtitle": "Integer ullamcorper neque eu purus euismod",
+    "price": "6.00",
+    "category": "drinks",
+    "on_main": true
+  }
+},
+{
+  "model": "restaurant.privateevent",
+  "pk": 1,
+  "fields": {
+    "title": "Corporate Parties",
+    "subtitle": "Corporate events",
+    "text": "For private events please call us or use the contact form.",
+    "image": "images/events/event-corporate.png",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "restaurant.privateevent",
+  "pk": 2,
+  "fields": {
+    "title": "Weddings",
+    "subtitle": "Wedding events",
+    "text": "For private events please call us or use the contact form.",
+    "image": "images/events/event-weddings.png",
+    "order": 2,
+    "is_active": true
+  }
+}
+]
