@@ -1,6 +1,33 @@
 $(function () {
     var $header = $(".hero__header");
 
+    function getCookie(name) {
+        var cookieValue = null;
+
+        if (document.cookie && document.cookie !== "") {
+            var cookies = document.cookie.split(";");
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+
+                if (cookie.substring(0, name.length + 1) === name + "=") {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+
+        return cookieValue;
+    }
+
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (!(/^GET|HEAD|OPTIONS|TRACE$/i.test(settings.type))) {
+                xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+            }
+        }
+    });
+
     function updateHeader() {
         if ($(window).scrollTop() > 40) {
             $header.addClass("hero__header--fixed");
@@ -9,12 +36,18 @@ $(function () {
         }
     }
 
-    updateHeader();
-
-    $(window).on("scroll", updateHeader);
+    if ($header.length) {
+        updateHeader();
+        $(window).on("scroll", updateHeader);
+    }
 
     $(".hero__anchor").on("click", function (event) {
         var targetId = $(this).attr("href");
+
+        if (!targetId || targetId.charAt(0) !== "#") {
+            return;
+        }
+
         var $target = $(targetId);
 
         if ($target.length === 0) {
@@ -36,8 +69,11 @@ $(function () {
             600
         );
 
-        $("#mainMenu").collapse("hide");
+        if ($.fn.collapse) {
+            $("#mainMenu").collapse("hide");
+        }
     });
+
     $("#bookingForm").on("submit", function (event) {
         event.preventDefault();
 
@@ -72,13 +108,17 @@ $(function () {
             }
         });
     });
+
+    if ($(".specialities__slider").length && $.fn.slick) {
         $(".specialities__slider").slick({
-        arrows: false,
-        dots: true,
-        infinite: true,
-        speed: 500
-    });
-        $(".food-menu__tab").on("click", function () {
+            arrows: false,
+            dots: true,
+            infinite: true,
+            speed: 500
+        });
+    }
+
+    $(".food-menu__tab").on("click", function () {
         var category = $(this).data("category");
         var menuItems = $(".food-menu__item-col").toArray();
 
@@ -97,7 +137,8 @@ $(function () {
         $(menuItems).css("display", "none");
         $(filteredItems).css("display", "block");
     });
-        $("#contactForm").on("submit", function (event) {
+
+    $("#contactForm").on("submit", function (event) {
         event.preventDefault();
 
         var $form = $(this);
@@ -131,7 +172,8 @@ $(function () {
             }
         });
     });
-        function showAuthStatus($status, type, message) {
+
+    function showAuthStatus($status, type, message) {
         $status
             .removeClass("auth-modal__status--success auth-modal__status--error")
             .addClass("auth-modal__status--" + type)
@@ -221,16 +263,82 @@ $(function () {
     $(document).on("click", "#logoutLink", function (event) {
         event.preventDefault();
 
-        var csrfToken = $("input[name='csrfmiddlewaretoken']").first().val();
-
         $.ajax({
             url: "/users/logout/",
             type: "POST",
-            data: {
-                csrfmiddlewaretoken: csrfToken
-            },
             success: function () {
                 makeLoginMenuItem();
+                window.location.reload();
+            },
+            error: function () {
+                alert("Logout error. Please refresh the page.");
+            }
+        });
+    });
+
+    $("#passwordResetRequestForm").on("submit", function (event) {
+        event.preventDefault();
+
+        var $form = $(this);
+        var $status = $("#passwordResetRequestStatus");
+
+        showAuthStatus($status, "success", "Sending...");
+
+        $.ajax({
+            url: "/users/password-reset/request/",
+            type: "POST",
+            data: $form.serialize(),
+            success: function (response) {
+                showAuthStatus($status, "success", response.message);
+                $form[0].reset();
+            },
+            error: function (response) {
+                var message = "Something went wrong.";
+
+                if (response.responseJSON && response.responseJSON.message) {
+                    message = response.responseJSON.message;
+                }
+
+                showAuthStatus($status, "error", message);
+            }
+        });
+    });
+
+    $("#resetPasswordConfirmForm").on("submit", function (event) {
+        event.preventDefault();
+
+        var $form = $(this);
+        var $status = $("#resetPasswordConfirmStatus");
+        var url = $form.data("url");
+
+        $status
+            .removeClass("password-reset-page__status--success password-reset-page__status--error")
+            .addClass("password-reset-page__status--success")
+            .text("Sending...");
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: $form.serialize(),
+            success: function (response) {
+                $status
+                    .removeClass("password-reset-page__status--error")
+                    .addClass("password-reset-page__status--success")
+                    .text(response.message);
+
+                $form[0].reset();
+            },
+            error: function (response) {
+                var message = "Something went wrong.";
+
+                if (response.responseJSON && response.responseJSON.message) {
+                    message = response.responseJSON.message;
+                }
+
+                $status
+                    .removeClass("password-reset-page__status--success")
+                    .addClass("password-reset-page__status--error")
+                    .text(message);
             }
         });
     });

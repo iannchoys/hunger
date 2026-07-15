@@ -768,6 +768,15 @@
                             </button>
 
                             <p class="auth-modal__status" id="loginStatus"></p>
+
+                            <a
+                                class="auth-modal__forgot-link"
+                                href="#forgotPasswordTab"
+                                data-toggle="tab"
+                                role="tab"
+                            >
+                                Forgot Password?
+                            </a>
                         </form>
                     </div>
 
@@ -796,6 +805,35 @@
                             </button>
 
                             <p class="auth-modal__status" id="registerStatus"></p>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="forgotPasswordTab" role="tabpanel">
+                        <form class="auth-modal__form" id="passwordResetRequestForm" method="post">
+                            {% csrf_token %}
+
+                            <input
+                                class="auth-modal__field"
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                required
+                            >
+
+                            <button class="auth-modal__button" type="submit">
+                                SEND RESET LINK
+                            </button>
+
+                            <p class="auth-modal__status" id="passwordResetRequestStatus"></p>
+
+                            <a
+                                class="auth-modal__forgot-link"
+                                href="#loginTab"
+                                data-toggle="tab"
+                                role="tab"
+                            >
+                                Login
+                            </a>
                         </form>
                     </div>
                 </div>
