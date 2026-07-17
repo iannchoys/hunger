@@ -48,25 +48,22 @@
 
 ## Как запустить проект
 
-Команды ниже рассчитаны на Git Bash в Windows.
+### Команды ниже рассчитаны на Git Bash в Windows.
 
-Скачать проект (допустим он в загрузках)
+- cd ~/Downloads/hunger-main/hunger-main
+- python -m venv .venv
+- source .venv/Scripts/activate
+- pip install -r requirements.txt
+- cp .env.example .env
+- notepad .env
 
-cd ~/Downloads/hunger-main/hunger-main
-python -m venv .venv
-source .venv/Scripts/activate
-pip install -r requirements.txt
-cp .env.example .env
-notepad .env
+### Вписать настоящие SMTP-настройки своей почты
 
-Вписать настоящие SMTP-настройки своей почты
-
-python manage.py migrate
-python manage.py loaddata restaurant/fixtures/initial_data.json
-python manage.py check
-python manage.py createsuperuser
-python manage.py runserver
-
+- python manage.py migrate
+- python manage.py loaddata restaurant/fixtures/initial_data.json
+- python manage.py check
+- python manage.py createsuperuser
+- python manage.py runserver
 
 ## На сайте можно:
 
